@@ -10,8 +10,9 @@ Please, do not use this project for a mainline production.<br>
 
 ##### To my group members:
 
-<br>Please fork this repo and create a pull request,
+Please fork this repo and create a pull request,
 <br>code review will commence as soon as a pull requested.
+<br>or just ask for push access and whatnot...
 
 # Installation
 
@@ -22,7 +23,7 @@ Please, do not use this project for a mainline production.<br>
 ```
 composer install
 ```
-
+-   **Configure the ```.env``` file to match the database name**
 -   Migrate and seed the database or import the database from a .sql file included (simpeg_tb.sql)
 
 ```
@@ -46,7 +47,7 @@ php artisan key:generate
 php artisan serve
 
 ```
-
+---
 ## Below are from laravel
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
