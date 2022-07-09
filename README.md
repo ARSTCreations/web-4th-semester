@@ -26,24 +26,28 @@ composer install
 -   Migrate and seed the database or import the database from a .sql file included (simpeg_tb.sql)
 
 ```
-
-```
-
 php artisan migrate:fresh
 php artisan db:seed --class=UserSeeder
 php artisan db:seed --class=RolesSeeder
 php artisan db:seed --class=EmployeesSeeder
-
 ```
 
 -   Generate JWT and Laravel Secret Key
 
 ```
-
 php artisan jwt:secret
 php artisan key:generate
 
 ```
+
+-   Serve Away
+
+```
+php artisan serve
+
+```
+
+## Below are from laravel
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
@@ -109,4 +113,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+```
+
 ```
