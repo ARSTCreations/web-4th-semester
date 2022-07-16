@@ -7,6 +7,9 @@
 <header>
     <div class="box-daftar-agenda">
         <h1>Daftar Agenda</h1>
+        <div class="card-agenda">
+            tess
+        </div>
     </div>
     <div class="box-kalender-agenda">
         <h1>Kalender Agenda</h1>

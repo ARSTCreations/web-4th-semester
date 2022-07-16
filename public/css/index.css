@@ -62,6 +62,7 @@ h1{
     font-size: 17px;
     margin-inline-start: 30px;
     margin-block-start: 30px;
+    color: var(--color-black);
 }
 /*
 h2{
@@ -152,6 +153,16 @@ nav button{
 
 .nav__menu a:hover{
     color: var(--color-secondary);
+}
+
+.search{
+    box-sizing: border-box;
+    border: 1px solid #8F969C;
+    border-radius: 30px;
+    width: 200px;
+    height: 30px;
+    
+
 }
 
 /* ========================FOOTER=============================*/
@@ -300,21 +311,19 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
     font-size: 15px;
     display: block;
     color: black;
-    padding: 16px;
+    padding: 25px;
     text-decoration: none;
   }
   
   /* link Active/current */
-  .sidebar a.active,
-  .sidebar a.active:hover,
-  .sidebar a:focus,
-  .sidebar a.active:visited {
+
+  .sidebar a:focus {
     background-color: var(--color-secondary);
     color: var(--color-white);
   }
   
   /* Link pada mouse-over */
-  .sidebar a:hover:not(.active) {
+  .sidebar a:hover {
     background-color: var(--color-light);
     color: var(--color-secondary);
   }
@@ -324,6 +333,18 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
+  }
+
+  .button {
+    color: var(--color-white);
+    font-weight: 700;
+    position: fixed;
+    width: 200px;
+    height: 35px;
+    left: 50px;
+    top: 650px;
+background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+border-radius: 10px;
   }
   
   /* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */

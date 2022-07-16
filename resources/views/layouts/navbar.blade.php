@@ -2,7 +2,7 @@
     <div class="container nav__container">
         <a href="index.html"><img src="../img/weblogo.png"></a>
             <ul class="nav__menu">
-                <input type="text" placeholder="Search..">
+                <input  class="search" type="text" placeholder="Search..">
                 <div class="dropdown">
                       //isi dropdown
                     </div>
