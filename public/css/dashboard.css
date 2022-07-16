@@ -1,0 +1,50 @@
+.box-profile{
+    position: absolute;
+    width: 742px;
+    height: 407px;
+    left: 332px;
+    top: 131px;
+    
+    background: var(--color-primary);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.box-agenda{
+    position: absolute;
+    width: 742px;
+    height: 486px;
+    left: 332px;
+    top: 567px;
+    margin-block-end: 30rem;
+
+    background: var(--color-primary);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.box-p-surat{
+position: absolute;
+width: 323px;
+height: 342px;
+left: 1106px;
+top: 131px;
+
+background: var(--color-primary);
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 15px;
+}
+
+.box-presensi{
+
+position: absolute;
+width: 323px;
+height: 509px;
+left: 1106px;
+top: 497px;
+
+background: var(--color-primary);
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 15px;
+}
+
