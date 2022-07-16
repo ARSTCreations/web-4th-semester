@@ -1,0 +1,32 @@
+.box-daftar-agenda{
+    position: absolute;
+width: 315px;
+height: 823px;
+left: 332px;
+top: 131px;
+
+background: #FFFFFF;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+}
+
+.box-kalender-agenda{
+    position: absolute;
+    width: 772px;
+    height: 823px;
+left: 692px;
+top: 131px;
+
+background: #FFFFFF;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+}
+
+.box-daftar-agenda card-agenda{
+position: absolute;
+width: 267px;
+height: 104px;
+
+background: rgba(0, 80, 200, 0.05);
+border-radius: 5px;
+}

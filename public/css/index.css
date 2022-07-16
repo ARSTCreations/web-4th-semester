@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+:root{
+    --color-primary: #FFFFFF;
+    --color-secondary: #0050C8;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+    --color-danger-variant: rgba(247,88,66,0.4);
+    --color-white: #fff;
+    --color-light: rgba(234, 231, 231, 0.848);
+    --color-black: #000;
+    --color-bg: #F8FAFB;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transiition: all 400ms ease;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 0px;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    background: var(--color-bg);
+}
+
+.container{
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+
+/* section{
+    padding: 6rem 0;
+} */
+
+section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1,h2,h3,h4,h5{
+    line-height: 1.2;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 17px;
+    margin-inline-start: 30px;
+    margin-block-start: 30px;
+    color: var(--color-black);
+}
+/*
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.6rem;
+} */
+h4{
+    font-weight: 900;
+    font-size: 17.45px;
+    line-height: 27px;
+} 
+
+a{
+    color: var(--color-secondary);
+}
+
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.btn{
+    display: inline-block;
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: var(--transiition);
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-primary{
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+/*--------------------------NAVBAR--------------------*/
+nav{
+/* position: absolute; */
+width: 1554px;
+height: 98px;
+left: -42px;
+top: 0px;
+position: fixed;
+top: 0;
+z-index: 11;
+background-color: var(--color-primary);
+box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+/*change navbar on scroll w js*/
+.window-scroll{
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0,2);
+}
+
+.nav__container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button{
+    display: none;
+
+}
+
+.nav__menu{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav__menu a{
+    font-size: 0.9rem;
+    transition: var(--transiition);
+}
+
+.nav__menu a:hover{
+    color: var(--color-secondary);
+}
+
+.search{
+    box-sizing: border-box;
+    border: 1px solid #8F969C;
+    border-radius: 30px;
+    width: 200px;
+    height: 30px;
+    
+
+}
+
+/* ========================FOOTER=============================*/
+.footer{
+    background: var(--color-bg1);
+    padding-top: 5rem;
+    font-size: 0.9rem;
+}
+
+.footer_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+
+}
+
+.footer_container > div h4 {
+    margin-bottom: 1.2rem;
+
+}
+.footer__1 p{
+    margin: 0 0 2rem;
+
+}
+
+.footer ul li{
+    margin-bottom: 0.7rem;
+}
+
+footer ul li a:hover{
+    text-decoration: underline;
+}
+
+.footer_socials{
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+    margin-top: 1rem
+}
+
+.footer__copyright{
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--color-bg2);
+}
+
+/* ========================MEDIA TABLET=============================*/
+@media (max-width: 1024px) {
+    .container{
+        width: var(--container-width-md);
+    }
+    
+    h1{
+        font-size: 2.2rem
+    }
+    h2{
+        font-size: 1.7rem
+    }
+    h3{
+        font-size: 1.4rem
+    }
+    h4{
+        font-size: 1.2rem
+    }
+    /* ========================NAVBAR=============================*/
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    nav button#close-menu-btn{
+        display: none;
+    }
+
+    .nav__menu{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .nav__menu li {
+        width: 100%;
+        height: 5.8rem;
+    }
+
+    .nav__menu li a{
+        background: var(--color-primary);
+        box-shadow: -4rem 6rem rgba(0,0,0,0.1);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__menu li a:hover{
+        background: var(--color-bg);
+        color: var(--color-white);
+
+    }
+
+    .nav__menu input{
+        box-sizing: border-box;
+        position: absolute;
+        width: 279px;
+        height: 37px;
+        left: 1130px;
+        top: 31px;
+        background: var(--color-light);
+        border: 1px solid #000000;
+        border-radius: 30px;
+    }
+
+}
+
+/* ========================NAVBAR=============================*/
+.tugas2modul4{
+    padding: 6rem 0rem;
+    margin-top: 2rem;
+}
+
+/* ========================SIDEBAR=============================*/
+
+.sidebar {
+position: fixed;
+width: 300px;
+height: 908px;
+left: 0px;
+top: 99px;
+background-color: var(--color-primary);
+box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* link Sidebar */
+  .sidebar a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    color: black;
+    padding: 25px;
+    text-decoration: none;
+  }
+  
+  /* link Active/current */
+
+  .sidebar a:focus {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+  
+  /* Link pada mouse-over */
+  .sidebar a:hover {
+    background-color: var(--color-light);
+    color: var(--color-secondary);
+  }
+  
+  /* Halaman konten. Nilai properti margin-left harus sesuai dengan nilai properti lebar sidebar */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+
+  .button {
+    color: var(--color-white);
+    font-weight: 700;
+    position: fixed;
+    width: 200px;
+    height: 35px;
+    left: 50px;
+    top: 650px;
+background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+border-radius: 10px;
+  }
+  
+  /* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* Pada layar yang berukuran kurang dari 400 piksel, tampilkan bar secara vertikal, bukan horizontal */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
