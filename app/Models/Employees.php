@@ -10,8 +10,16 @@ class Employees extends Model
     use HasFactory;
     protected $table = 'employees';
     protected $guarded = [];
-    public function role()
-    {
-        return $this->belongsTo(Roles::class, 'role_id');
+    public function jobs(){
+        return $this->belongsTo('Jobs::class');
+    }
+    public function files(){
+        return $this->hasMany('Files::class');
+    }
+    public function agendas(){
+        return $this->hasMany('Agendas::class');
+    }
+    public function users(){
+        return $this->hasOne('User::class');
     }
 }

@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Roles extends Model
+class Agendas extends Model
 {
     use HasFactory;
-    protected $table = 'roles';
+    protected $table = 'agendas';
     protected $guarded = [];
-
-    public function employees()
-    {
-        return $this->hasMany(Employees::class, 'role_id');
+    public function employees(){
+        return $this->hasMany('Employees::class');
     }
 }

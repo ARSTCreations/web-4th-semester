@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id(); // id = primary key (Employees Foreign Key)
-            $table->string('role_title'); // role_title = nama jabatan
-            $table->string('role_description'); // role_description = deskripsi jabatan
+        Schema::create('files', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->string('url');
+            $table->string('title');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('files');
     }
 };

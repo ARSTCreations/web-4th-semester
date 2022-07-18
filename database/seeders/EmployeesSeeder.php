@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class EmployeesSeeder extends Seeder
 {
@@ -16,20 +17,30 @@ class EmployeesSeeder extends Seeder
     public function run()
     {
         DB::table('employees')->insert([
-            'role_id' => 1,
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'johndoe@mail.com',
+            'job_id' => 1,
+            'full_name' => 'Manager Kim',
+            'working_status' => 'Active',
+            'salary' => 100000,
             'phone' => '081234567890',
-            'address' => 'Jl. Kebon Kacang No. 1',
+            'address' => 'Jl. Kebon Kacang',
+            'birth_place' => 'Jakarta',
+            'birth_date' => '1990-01-01',
+            'gender' => '1',
+            'start_date' => Carbon::now()->format('Y-m-d H:i:s'),
+            'end_date' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
         DB::table('employees')->insert([
-            'role_id' => 2,
-            'first_name' => 'Jane',
-            'last_name' => 'Doe',
-            'email' => 'janedoe@gmail.com',
+            'job_id' => 1,
+            'full_name' => 'Manager Kim',
+            'working_status' => 'Active',
+            'salary' => 100000,
             'phone' => '081234567890',
-            'address' => 'Jl. Kebon Kacang No. 1',
+            'address' => 'Jl. Kebon Kacang',
+            'birth_place' => 'Jakarta',
+            'birth_date' => '1990-01-01',
+            'gender' => '1',
+            'start_date' => Carbon::now()->format('Y-m-d H:i:s'),
+            'end_date' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
     }
 }
