@@ -5,10 +5,11 @@
 @stop
 @section('content')
 <header>
-    <div class="box-profile">
-        <h1>Profile</h1>
-    </div>
-    
+<h69>Profile</h69>
 </header>
+<body>
+<div class="box-profile">
+</div>
+</body>
 
 @endsection

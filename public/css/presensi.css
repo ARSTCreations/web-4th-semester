@@ -1,11 +1,59 @@
 .box-presensi{
     position: absolute;
-width: 1037px;
-height: 809px;
-left: 332px;
-    top: 131px;
+    width: 1040px;
+    height: 452px;
+    left: 425px;
+    top: 186px;
+    
+    background: #FFFFFF;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+}
+
+.tanggal-box{
+position: absolute;
+width: 74.1px;
+height: 0px;
+left: 506.34px;
+top: 216.43px;
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+transform: rotate(0.33deg);
+}
+
+.box-bawah{
+    position: absolute;
+width: 1040px;
+height: 291px;
+left: 423px;
+top: 662px;
 
 background: #FFFFFF;
 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 border-radius: 25px;
+}
+
+h69{
+    position: absolute;
+width: 219px;
+height: 0px;
+left: 425px;
+top: 146px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 0px;
+/* identical to box height, or 0% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
 }
