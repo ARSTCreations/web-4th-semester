@@ -5,10 +5,15 @@
 @stop
 @section('content')
 <header>
-    <div class="box-presensi">
-        <h1>Presensi</h1>
-    </div>
-    
+<h69>Presensi</h69>
 </header>
+
+<body>
+<div class="box-presensi">
+        <h1>Tanggal</h1>
+</div>
+<div class="box-bawah">
+        <h1>Tabel</h1>
+</body>
 
 @endsection
