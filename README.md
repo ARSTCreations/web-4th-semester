@@ -40,7 +40,12 @@ DB_PASSWORD=
 
 ```
 php artisan migrate:fresh
-php artisan db:seed
+php artisan db:seed --class=DepartmentsSeeder
+php artisan db:seed --class=JobsSeeder
+php artisan db:seed --class=EmployeesSeeder
+php artisan db:seed --class=UserSeeder
+php artisan db:seed --class=AgendasSeeder
+php artisan db:seed --class=FilesSeeder
 ```
 
 -   Generate JWT and Laravel Secret Key
