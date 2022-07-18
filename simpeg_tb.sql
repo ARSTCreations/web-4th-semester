@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 09, 2022 at 08:27 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jul 18, 2022 at 07:09 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,8 +18,56 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `simpeg_tb`
+-- Database: `simpeg_tb.sql`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agendas`
+--
+
+CREATE TABLE `agendas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `employee_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `agendas`
+--
+
+INSERT INTO `agendas` (`id`, `employee_id`, `title`, `description`, `location`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Agenda 1', 'Agenda 1', 'Jl. Kebon Kacang', '2022-07-15 12:30:17', '2022-07-15 12:30:17', NULL, NULL),
+(2, 1, 'Agenda 2', 'Agenda 2', 'Jl. Kebon Kacang', '2022-07-15 12:30:17', '2022-07-15 12:30:17', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departments`
+--
+
+CREATE TABLE `departments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `department_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`id`, `department_name`, `created_at`, `updated_at`) VALUES
+(1, 'IT', NULL, NULL),
+(2, 'Sales', NULL, NULL),
+(3, 'Marketing', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -29,12 +77,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `employees` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `role_id` bigint(20) UNSIGNED NOT NULL,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `job_id` bigint(20) UNSIGNED NOT NULL,
+  `full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `working_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `salary` int(11) NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birth_place` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birth_date` date NOT NULL,
+  `gender` tinyint(1) NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -43,9 +96,9 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`id`, `role_id`, `first_name`, `last_name`, `email`, `phone`, `address`, `created_at`, `updated_at`) VALUES
-(1, 1, 'John', 'Doe', 'johndoe@mail.com', '081234567890', 'Jl. Kebon Kacang No. 1', NULL, NULL),
-(2, 1, 'Jane', 'Doe', 'janedoe@gmail.com', '081234567890', 'Jl. Kebon Kacang No. 1', NULL, NULL);
+INSERT INTO `employees` (`id`, `job_id`, `full_name`, `working_status`, `salary`, `phone`, `address`, `birth_place`, `birth_date`, `gender`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Manager Kim', 'Active', 100000, '081234567890', 'Jl. Kebon Kacang', 'Jakarta', '1990-01-01', 1, '2022-07-15 12:29:27', '2022-07-15 12:29:27', NULL, NULL),
+(2, 1, 'Manager Kim', 'Active', 100000, '081234567890', 'Jl. Kebon Kacang', 'Jakarta', '1990-01-01', 1, '2022-07-15 12:29:27', '2022-07-15 12:29:27', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -66,6 +119,54 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `files`
+--
+
+CREATE TABLE `files` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `employee_id` bigint(20) UNSIGNED NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `files`
+--
+
+INSERT INTO `files` (`id`, `employee_id`, `url`, `title`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, '/files/file1.pdf', 'File 1', 'Pending', NULL, NULL),
+(2, 1, '/files/file2.pdf', 'File 2', 'Approved', NULL, NULL),
+(3, 1, '/files/file3.pdf', 'File 3', 'Pending', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `department_id` bigint(20) UNSIGNED NOT NULL,
+  `job_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `department_id`, `job_title`, `created_at`, `updated_at`) VALUES
+(1, 1, 'IT Manager', NULL, NULL),
+(2, 2, 'Sales Operator', NULL, NULL),
+(3, 3, 'Marketing Consultant', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -80,12 +181,15 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
+(1, '1_create_departments_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_07_09_103121_create_roles_table', 1),
-(6, '2022_07_09_103144_create_employees_table', 1);
+(5, '2_create_jobs_table', 1),
+(6, '3_create_employees_table', 1),
+(7, '4_create_users_table', 1),
+(8, '5_create_files_table', 1),
+(9, '6_create_agendas_table', 1);
 
 -- --------------------------------------------------------
 
@@ -120,64 +224,53 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
---
-
-CREATE TABLE `roles` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `role_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `roles`
---
-
-INSERT INTO `roles` (`id`, `role_title`, `role_description`, `created_at`, `updated_at`) VALUES
-(1, 'CEO', 'Responsible for managing company\'s overall operations', NULL, NULL),
-(2, 'CTO', 'Responsible for managing company\'s technological operations', NULL, NULL),
-(3, 'HRD', 'Manages the company\'s human resources', NULL, NULL),
-(4, 'Overseer', 'Oversee Projects and tasks', NULL, NULL),
-(5, 'Project Leader', 'Lead a project', NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `employee_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'GUEST', 'guest', NULL, '$2y$10$Pf7iz/AJ74quElgoo5eqv.qSiHASHxxmJ4VheofCZD3iD.99MxA0u', NULL, NULL, NULL),
-(2, 'ADMIN', 'admin', NULL, '$2y$10$mJFh1TBlWCSMPnUrKRr1tu8/HOUo/aPzzmV9G3/kigP6BeRgRfODC', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `employee_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `is_admin`) VALUES
+(1, 1, 'Manager Kim', 'kim@mail.com', NULL, '$2y$10$H7viAZC.HcIPIf95J/HJKO8ZSYPCuAKbV8mCzx1itolROjCoeP5Mu', NULL, NULL, NULL, 1),
+(2, 2, 'Mbak Minji', 'minji@mail.com', NULL, '$2y$10$0Ca4bKoBqBtHHzBE5wqmEekEGV5H/9lUESuI1tIkKTeVljI2hbf8.', NULL, NULL, NULL, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `agendas`
+--
+ALTER TABLE `agendas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `agendas_employee_id_foreign` (`employee_id`);
+
+--
+-- Indexes for table `departments`
+--
+ALTER TABLE `departments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `employees_email_unique` (`email`),
-  ADD KEY `employees_role_id_foreign` (`role_id`);
+  ADD KEY `employees_job_id_foreign` (`job_id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -185,6 +278,20 @@ ALTER TABLE `employees`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `files_employee_id_foreign` (`employee_id`);
+
+--
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jobs_department_id_foreign` (`department_id`);
 
 --
 -- Indexes for table `migrations`
@@ -207,27 +314,34 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD KEY `users_employee_id_foreign` (`employee_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `agendas`
+--
+ALTER TABLE `agendas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `departments`
+--
+ALTER TABLE `departments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -236,22 +350,28 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -264,10 +384,34 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `agendas`
+--
+ALTER TABLE `agendas`
+  ADD CONSTRAINT `agendas_employee_id_foreign` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`);
+
+--
 -- Constraints for table `employees`
 --
 ALTER TABLE `employees`
-  ADD CONSTRAINT `employees_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+  ADD CONSTRAINT `employees_job_id_foreign` FOREIGN KEY (`job_id`) REFERENCES `jobs` (`id`);
+
+--
+-- Constraints for table `files`
+--
+ALTER TABLE `files`
+  ADD CONSTRAINT `files_employee_id_foreign` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`);
+
+--
+-- Constraints for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD CONSTRAINT `jobs_department_id_foreign` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_employee_id_foreign` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

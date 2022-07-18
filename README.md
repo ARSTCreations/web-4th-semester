@@ -2,15 +2,15 @@
 
 # Notice!
 
-##### To the public:
+#### To the public:
 
 This is a project that was issued by our lecturer as a final project on our 4th semester,<br>
 as you'd expect it would be badly coded.<br>
 Please, do not use this project for a mainline production.<br>
 
-##### To my group members:
+#### To my group members:
 
-Please fork this repo and create a pull request,
+**Please fork this repo and contribute pull request,**
 <br>code review will commence as soon as a pull requested.
 <br>or just ask for push access and whatnot...
 
@@ -23,14 +23,24 @@ Please fork this repo and create a pull request,
 ```
 composer install
 ```
--   **Configure the ```.env``` file to match the database name**
--   Migrate and seed the database or import the database from a .sql file included (simpeg_tb.sql)
+
+-   Create Database via PHPMyAdmin
+-   **Configure the `.env` file to match the database name** _(Suit your preferences)_
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+-   Migrate and seed the database <br> **or simply import the database from a .sql file included (simpeg_tb.sql)**
 
 ```
 php artisan migrate:fresh
-php artisan db:seed --class=UserSeeder
-php artisan db:seed --class=RolesSeeder
-php artisan db:seed --class=EmployeesSeeder
+php artisan db:seed
 ```
 
 -   Generate JWT and Laravel Secret Key
@@ -38,18 +48,24 @@ php artisan db:seed --class=EmployeesSeeder
 ```
 php artisan jwt:secret
 php artisan key:generate
-
 ```
 
 -   Serve Away
 
 ```
 php artisan serve
-
 ```
----
-## Below are from laravel
 
+-   Get your job done :)
+    -   Add your code
+    -   Commit
+    -   Push to your fork
+    -   Pull Request
+
+---
+
+<details>
+<summary>*sigh...* Larvel have something to say...</summary>  
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -118,3 +134,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ```
 
 ```
+
+</details>
