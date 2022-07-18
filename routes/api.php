@@ -4,8 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DepartmentsController;
+use App\Http\Controllers\Api\JobsController;
 use App\Http\Controllers\Api\EmployeesController;
-use App\Http\Controllers\Api\RolesController;
+use App\Http\Controllers\Api\FilesController;
+use App\Http\Controllers\Api\AgendasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +34,39 @@ Route::prefix('stable')->group(function(){
     });
 
     Route::middleware('jwt.verify')->group(function(){
+        Route::apiResource('departments',DepartmentsController::class,[
+            'as'=>'api'
+        ]);
+        Route::apiResource('jobs',JobsController::class,[
+            'as'=>'api'
+        ]);
         Route::apiResource('employees',EmployeesController::class,[
             'as'=>'api'
         ]);
-        Route::apiResource('roles',RolesController::class,[
+        Route::apiResource('files',FilesController::class,[
             'as'=>'api'
         ]);
+        Route::apiResource('agendas',AgendasController::class,[
+            'as'=>'api'
+        ]);
+
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        });
+        Route::get('/profile', function () {
+            return view('profile');
+        });
+        Route::get('/permohonan_surat', function () {
+            return view('permohonan_surat');
+        });
+        Route::get('/presensi', function () {
+            return view('presensi');
+        });
+        Route::get('/agenda', function () {
+            return view('agenda');
+        });
+        Route::get('/register', function () {
+            return view('register');
+        });
     });
 });

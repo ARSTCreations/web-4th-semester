@@ -25,17 +25,21 @@ class JWTMiddleware
                 $user = JWTAuth::parseToken()->authenticate();
             }catch(TokenExpiredException $e){
                 // return response()->json(['error' => 'Token Expired'], 401);
-                return redirect('/login');
+                return redirect('/login?error=token_expired');
             }catch(TokenInvalidException $e){
                 // return response()->json(['error' => 'Token Invalid'], 401);
+                return redirect('/login?error=token_invalid');
             }catch(TokenBlacklistedException $e){
                 // return response()->json(['error' => 'Token Blacklisted'], 401);
+                return redirect('/login?error=token_blacklisted');
             }catch(\Exception $e){
                 // return response()->json(['error' => 'Error On Processing Authorization'], 303);
+                return redirect('/login?error=unkown_error');
             }
             return $next($request);
         } else {
             // return response()->json(['error' => 'Token Starvation'], 401);
+            return redirect('/login?error=token_starvation');
         }
     }
 }

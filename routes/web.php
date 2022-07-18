@@ -14,20 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('/');
+});
+
+Route::get('/login', function () {
+    return view('login');
 });
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/api/stable/dashboard');
 });
 Route::get('/profile', function () {
-    return view('profile');
+    return redirect('/api/stable/profile');
 });
 Route::get('/permohonan_surat', function () {
-    return view('permohonan_surat');
+    return redirect('/api/stable/permohonan_surat');
 });
 Route::get('/presensi', function () {
-    return view('presensi');
+    return redirect('/api/stable/presensi');
 });
 Route::get('/agenda', function () {
-    return view('agenda');
+    return redirect('/api/stable/agenda');
 });
