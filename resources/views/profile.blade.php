@@ -13,7 +13,11 @@
     <div class="grid-bawah">
         <div class="grid-bawah-kiri">
             <img src="{{asset('img/profil.png')}}" alt="">
-            <h3 style="margin-top: 30px;">{{$profilefromauth['full_name']}}</h3>
+            <textarea rows="4" cols="50">
+                CONTOH DATA:
+                {{json_encode($profilefromauth[0])}}
+            </textarea>
+            <h3 style="margin-top: 30px;">{{json_encode($profilefromauth[0]->salary)}}</h3>
             <p>Title Saya</p>
             <p >Kontak :</p>
             <li class="social-media">

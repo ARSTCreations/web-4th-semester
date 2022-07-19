@@ -104,8 +104,8 @@ class AuthController extends Controller
     }
 
     public function getProfile(){
-        $authid = auth()->user();
-        $profilefromauth = Employees::where('id', $authid->id)->first();
+        $authid = auth()->user()->id;
+        $profilefromauth = DB::select("SELECT * FROM employees e INNER JOIN users u on (e.id = u.employee_id) INNER JOIN jobs j on (e.job_id = j.id) INNER JOIN departments d on (j.id = d.id) WHERE e.id = ?", [$authid]);
         return view('profile', compact('profilefromauth'));
     }
 }
