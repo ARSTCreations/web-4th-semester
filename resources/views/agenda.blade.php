@@ -8,7 +8,11 @@
     <div class="box-daftar-agenda">
         <h1>Daftar Agenda</h1>
         <div class="card-agenda">
-            tess
+            <p>Selasa, 19 Juli 2022</p>
+            <h2>Demo Proyek Pemaaran</h2>
+            <p>08.00 - 09.00</p>
+            <p>Gedung AB</p>
+            </div>
         </div>
     </div>
     <div class="box-kalender-agenda">
