@@ -33,6 +33,12 @@
 
     <div class="box-daftar-surat">
         <h1>Daftar Surat</h1><hr style="width: 100%; height: 1.5px; background: var(--color-light); margin-top: 20px">
+        <div style="margin: 1rem">
+            @foreach ($suratfromauth as $s)
+                <h4> <a href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}">Title: {{str_replace('"', "", json_encode($s->title))}}</a></h4>
+                <h6>Status: {{json_encode($s->status)}}</h6>
+            @endforeach
+        </div>
     </div>
     
 </header>

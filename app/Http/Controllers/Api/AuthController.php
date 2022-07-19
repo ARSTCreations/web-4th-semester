@@ -115,4 +115,10 @@ class AuthController extends Controller
         return view('dashboard', compact('profilefromauth'));
     }
 
+    public function getSurat(){
+        $authid = auth()->user()->id;
+        $suratfromauth = DB::select("SELECT * FROM files");
+        return view('permohonan_surat', compact('suratfromauth'));
+    }
+
 }

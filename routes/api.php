@@ -52,9 +52,7 @@ Route::prefix('stable')->group(function(){
 
         Route::get('/dashboard', [AuthController::class, 'getProfileDash'])->name('getProfileDash');
         Route::get('/profile', [AuthController::class, 'getProfile'])->name('getProfile');
-        Route::get('/permohonan_surat', function () {
-            return view('permohonan_surat');
-        });
+        Route::get('/permohonan_surat', [AuthController::class, 'getSurat'])->name('getSurat');
         Route::get('/presensi', function () {
             return view('presensi');
         });
