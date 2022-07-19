@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login-pegawai');
 });
+Route::get('/admin', function () {
+    return view('login-admin');
+});
 Route::get('/dashboard', function () {
     return redirect('/api/stable/dashboard');
 });

@@ -13,7 +13,7 @@
     
     <div class="row">
         <div class="kiri">
-            <img src="img/rectangle.png">
+            <img src="img/rectangle.png" style="height:100%; width:45vw">
 
             <!-------offer----->
             <div class="offer">
@@ -120,15 +120,15 @@
                     <a href="#login-admin" class="signupBtn">Klik Disini</a></p>
             </div>
 
-            <form name="submitbtn" id="login" action="reg.php" method="post">
+            <form name="submitbtn" id="login" action="/api/stable/auth/login" method="post">
                 <div class="form_atas">
                     <p>
                         <label>E-mail</label><br>
-                        <input type="text" id="fullname" name="fullname" placeholder="account@gmail.com" required/><br>
+                        <input type="text" id="email" name="email" placeholder="account@gmail.com" required/><br>
                     </p> <br><br><br><br>
                     <p>
                         <label>Password</label><br>
-                        <input type="text" name="address" placeholder="password" required /><br>
+                        <input type="password" name="password" placeholder="password" required /><br>
                     </p>
                 </div> <br><br><br><br>
                 <div class="submitbtn">

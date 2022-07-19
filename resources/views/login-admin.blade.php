@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Geevent | Event Organizer Website Design</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="../css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" rel="stylesheet">
@@ -13,13 +13,11 @@
     
     <div class="row">
         <div class="kiri">
-            <img src="img/rectangle.png">
+            <img src="img/rectangle.png" style="height:100%; width:35vw">
 
             <!-------offer----->
             <div class="offer">
-                
                 <div class="slideshow-container">
-        
                     <div class="mySlides fade">
                         <div class="row">
                             <div class="col-2">
@@ -115,20 +113,20 @@
     
             </div>
             <div class="title">
-                <h1>Log in Pegawai <img src="img/waving-hand-2.png" width="30px"></h1>
+                <h1>Log in Admin <img src="img/waving-hand-2.png" width="30px"></h1>
                 <p>Selamat datang di aplikasi kepegawaian CV. Creative Design<br>Indonesia. Pegawai?
                     <a href="#login-pegawai" class="signupBtn">Klik Disini</a></p>
             </div>
 
-            <form name="submitbtn" id="login" action="reg.php" method="post">
+            <form name="submitbtn" id="login" action="/api/stable/auth/login" method="post">
                 <div class="form_atas">
                     <p>
                         <label>E-mail</label><br>
-                        <input type="text" id="fullname" name="fullname" placeholder="account@gmail.com" required/><br>
+                        <input type="text" id="fullname" name="email" placeholder="account@gmail.com" required/><br>
                     </p> <br><br><br><br>
                     <p>
                         <label>Password</label><br>
-                        <input type="text" name="address" placeholder="password" required /><br>
+                        <input type="password" name="password" placeholder="password" required /><br>
                     </p>
                 </div> <br><br><br><br>
                 <div class="submitbtn">
