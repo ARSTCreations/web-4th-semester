@@ -1,11 +1,78 @@
-.box-p-surat{
-    position: absolute;
-width: 1037px;
-height: 809px;
+.box-pengajuan{
+position: absolute;
+width: 699px;
+height: 754px;
 left: 332px;
-    top: 131px;
+top: 160px;
 
 background: #FFFFFF;
 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 border-radius: 25px;
 }
+
+.box-pengajuan h2{
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--color-black);
+}
+
+.form-input{
+    margin-block-start: 30px;
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+}
+
+.form-input label{
+    margin-right: 100px;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--color-black);
+}
+
+
+
+.form-input input {
+    justify-content: end;
+    display: absolute;
+    box-sizing: border-box;
+    border: 1px solid #8F969C;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+}
+
+.form-input textarea{
+    display: absolute;
+    box-sizing: border-box;
+    border: 1px solid #8F969C;
+    border-radius: 5px;
+    width: 400px;
+    height: 100px;
+}
+
+
+.box-daftar-surat{
+    position: absolute;
+    width: 322px;
+    height: 754px;
+    left: 1060px;
+    top: 160px;
+
+    background: #FFFFFF;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+
+}
+
+.button-custom {
+    margin-top: 100px;
+    margin-left: 30px;
+    color: var(--color-white);
+    font-weight: 700;
+    width: 100px;
+    height: 35px;
+    position: relative;
+    
+background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+border-radius: 10px;
+  }
