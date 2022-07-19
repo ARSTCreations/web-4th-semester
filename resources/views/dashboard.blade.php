@@ -13,7 +13,7 @@
         <div class="content-grid">
             <div class="grid-kiri">
                 <img src="../img/profil.png" alt="">
-                <h3 style="margin-top: 30px;">Nama Saya</h3>
+                <h3 style="margin-top: 30px;">{{json_encode($profilefromauth[0]->salary)}}</h3>
                 <p style="margin-bottom: 50px;">Title Saya</p>
                 <li class="social-media">
                     <a href="#linkedin"><i class="uil uil-linkedin"></i></a>
