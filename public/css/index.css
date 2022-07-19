@@ -148,6 +148,10 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
     align-items: center;
 }
 
+.nav__container a{
+    margin-left: -60px;
+}
+
 nav button{
     display: none;
 
@@ -162,6 +166,7 @@ nav button{
 .nav__menu a{
     font-size: 0.9rem;
     transition: var(--transiition);
+    
 }
 
 .nav__menu a:hover{
@@ -319,12 +324,14 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
   
   /* link Sidebar */
   .sidebar a {
+    margin-top: 10px;
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     display: block;
     color: black;
     padding: 25px;
+    padding-left: 50px;
     text-decoration: none;
   }
   
@@ -356,8 +363,8 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
     height: 35px;
     left: 50px;
     top: 650px;
-background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
-border-radius: 10px;
+    background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+    border-radius: 10px;    
   }
   
   /* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */
