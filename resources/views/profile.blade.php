@@ -15,7 +15,7 @@
             <img src="../img/profil.png" alt="">
             <h3 style="margin-top: 30px;">Nama Saya</h3>
             <p>Title Saya</p>
-            <p style="margin-top: 260px;">Kontak :</p>
+            <p >Kontak :</p>
             <li class="social-media">
                 <a href="#linkedin"><i class="uil uil-linkedin"></i></a>
                 <a href="#facebook"><i class="uil uil-facebook"></i></a>
