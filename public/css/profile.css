@@ -1,11 +1,70 @@
 .box-profile{
     position: absolute;
     width: 1044px;
-    height: 757px;
+    height: 800px;
     left: 332px;
-    top: 131px;
+    top: 160px;
 
     background: var(--color-primary);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
 }
+
+.grid-atas img{
+    border-radius: 15px 15px 0px 0px;
+}
+
+.grid-bawah{
+    margin-inline-start: 20px;
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    align-items: center;
+}
+
+.grid-bawah-kiri{
+    margin-block-start: -70px;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-bawah-tengah,
+.grid-bawah-kanan{
+    margin-block-start: 20px;
+    
+}
+
+.grid-bawah-tengah h2,
+.grid-bawah-kanan h2{
+    margin-bottom: 25px;
+}
+
+.social-media{
+    text-align: center;
+    left: 566px;
+}
+
+.social-media a{
+    letter-spacing: 10px;
+}
+
+.grid-bawah-kiri img{
+    width: 150px;
+    height: 150px;
+    margin-inline-start: 135px;
+}
+
+.grid-bawah-tengah ul,
+.grid-bawah-kanan ul{
+    color: var(--color-black);
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+
+}
+
+.desc-li{
+    color: var(--color-secondary);
+    font-size: 15px;
+    font-weight: 400;
+}
+
