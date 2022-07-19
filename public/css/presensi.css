@@ -1,11 +1,30 @@
 .box-presensi{
     position: absolute;
-width: 1037px;
-height: 809px;
-left: 332px;
-    top: 131px;
+    width: 1080px;
+    height: 345px;
+    left: 332px;
+    top: 175px;
 
 background: #FFFFFF;
 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 border-radius: 25px;
+}
+.box-presensi-2{
+    position: absolute;
+    width: 1080px;
+    height: 300px;
+    left: 332px;
+    top: 545px;
+
+background: #FFFFFF;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 25px;
+}
+
+h1{
+    position: absolute;
+width: 99px;
+height: 0px;
+left: 305px;
+top: 100px;
 }
