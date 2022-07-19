@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/');
+    return view('presensi');
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('login-pegawai');
 });
 Route::get('/dashboard', function () {
     return redirect('/api/stable/dashboard');

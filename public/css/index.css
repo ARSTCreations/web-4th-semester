@@ -149,7 +149,11 @@ nav {
     align-items: center;
 }
 
-nav button {
+.nav__container a{
+    margin-left: -60px;
+}
+
+nav button{
     display: none;
 }
 
@@ -162,6 +166,7 @@ nav button {
 .nav__menu a {
     font-size: 0.9rem;
     transition: var(--transiition);
+    
 }
 
 .nav__menu a:hover {
@@ -301,23 +306,25 @@ footer ul li a:hover {
 /* ========================SIDEBAR=============================*/
 
 .sidebar {
-    position: fixed;
-    width: 300px;
-    height: 908px;
-    left: 0px;
-    top: 75px;
-    background-color: var(--color-primary);
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
-}
-
-/* link Sidebar */
-.sidebar a {
+position: fixed;
+width: 300px;
+height: 908px;
+left: 0px;
+top: 75px;
+background-color: var(--color-primary);
+box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* link Sidebar */
+  .sidebar a {
+    margin-top: 10px;
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     display: block;
     color: black;
     padding: 25px;
+    padding-left: 50px;
     text-decoration: none;
 }
 
@@ -349,9 +356,28 @@ div.content {
     height: 35px;
     left: 50px;
     top: 650px;
-    background: linear-gradient(264.25deg, #0050c8 51.8%, #1e78ff 115.07%);
-    border-radius: 10px;
-}
+    background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+    border-radius: 10px;    
+  }
+  
+  /* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* Pada layar yang berukuran kurang dari 400 piksel, tampilkan bar secara vertikal, bukan horizontal */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
 
 /* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */
 @media screen and (max-width: 700px) {
