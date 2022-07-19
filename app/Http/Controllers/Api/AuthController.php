@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use App\Models\Employees;
 
 
 class AuthController extends Controller
@@ -99,5 +101,11 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
+    }
+
+    public function getProfile(){
+        $authid = auth()->user();
+        $profilefromauth = Employees::where('id', $authid->id)->first();
+        return view('profile', compact('profilefromauth'));
     }
 }

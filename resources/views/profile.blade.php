@@ -13,7 +13,7 @@
     <div class="grid-bawah">
         <div class="grid-bawah-kiri">
             <img src="{{asset('img/profil.png')}}" alt="">
-            <h3 style="margin-top: 30px;">Nama Saya</h3>
+            <h3 style="margin-top: 30px;">{{$profilefromauth['full_name']}}</h3>
             <p>Title Saya</p>
             <p style="margin-top: 260px;">Kontak :</p>
             <li class="social-media">
