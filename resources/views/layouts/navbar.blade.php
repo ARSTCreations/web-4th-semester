@@ -1,6 +1,6 @@
 <nav>
     <div class="container nav__container">
-        <a href="index.html"><img src="../img/weblogo.png"></a>
+        <a href="index.html" style="margin-left:-120px"><img src="{{asset('img/weblogo.png')}}"></a>
             <ul class="nav__menu">
                 <input  class="search" type="text" placeholder="Search..">
                 <div class="dropdown">

@@ -8,11 +8,11 @@
     <h3 style="position: absolute; left: 332px; top: 105px; font-size: 20px">Profile</h3>
     <div class="box-profile">
     <div class="grid-atas">
-        <img src="../img/Artboard 11 2.png" alt="">
+        <img src="{{asset('img/Artboard 11 2.png')}}" alt="">
     </div>
     <div class="grid-bawah">
         <div class="grid-bawah-kiri">
-            <img src="../img/profil.png" alt="">
+            <img src="{{asset('img/profil.png')}}" alt="">
             <h3 style="margin-top: 30px;">Nama Saya</h3>
             <p>Title Saya</p>
             <p style="margin-top: 260px;">Kontak :</p>
