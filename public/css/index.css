@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -7,17 +7,17 @@
     list-style: none;
     box-sizing: border-box;
 }
-:root{
-    --color-primary: #FFFFFF;
-    --color-secondary: #0050C8;
+:root {
+    --color-primary: #ffffff;
+    --color-secondary: #0050c8;
     --color-success: #00bf8e;
     --color-warning: #f7c94b;
     --color-danger: #f75842;
-    --color-danger-variant: rgba(247,88,66,0.4);
+    --color-danger-variant: rgba(247, 88, 66, 0.4);
     --color-white: #fff;
     --color-light: rgba(234, 231, 231, 0.848);
     --color-black: #000;
-    --color-bg: #F8FAFB;
+    --color-bg: #f8fafb;
     --color-bg1: #2e3267;
     --color-bg2: #424890;
 
@@ -28,8 +28,8 @@
     --transiition: all 400ms ease;
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
+body {
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 17px;
@@ -39,7 +39,7 @@ body{
     background: var(--color-bg);
 }
 
-.container{
+.container {
     width: var(--container-width-lg);
     margin: 0 auto;
 }
@@ -48,16 +48,20 @@ body{
     padding: 6rem 0;
 } */
 
-section h2{
+section h2 {
     text-align: center;
     margin-bottom: 4rem;
 }
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
     line-height: 1.2;
 }
 
-h1{
+h1 {
     font-weight: 700;
     font-size: 17px;
     margin-inline-start: 30px;
@@ -65,42 +69,41 @@ h1{
     color: var(--color-black);
 }
 
-h2{
+h2 {
     font-weight: 700;
     font-size: 17px;
     color: var(--color-black);
 }
 
-h3{
+h3 {
     font-weight: 700;
     font-size: 25px;
     color: var(--color-black);
 }
 
-h4{
+h4 {
     font-weight: 900;
     font-size: 17.45px;
     line-height: 27px;
-} 
+}
 
-a{
+a {
     color: var(--color-secondary);
 }
 
-p{
+p {
     color: var(--color-black);
     font-size: 17px;
     font-weight: 400;
-
 }
 
-img{
+img {
     width: 100%;
     display: block;
     object-fit: cover;
 }
 
-.btn{
+.btn {
     display: inline-block;
     background: var(--color-danger);
     color: var(--color-white);
@@ -110,113 +113,110 @@ img{
     transition: var(--transiition);
 }
 
-.btn:hover{
+.btn:hover {
     background: transparent;
     color: var(--color-white);
     border-color: var(--color-white);
 }
 
-.btn-primary{
+.btn-primary {
     background: var(--color-danger);
     color: var(--color-white);
 }
 
 /*--------------------------NAVBAR--------------------*/
-nav{
-/* position: absolute; */
-width: 1554px;
-height: 74px;
-left: -42px;
-top: 0px;
-position: fixed;
-top: 0;
-z-index: 11;
-background-color: var(--color-primary);
-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+nav {
+    /* position: absolute; */
+    width: 100%;
+    height: 74px;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    background-color: var(--color-primary);
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
 }
 
 /*change navbar on scroll w js*/
-.window-scroll{
+.window-scroll {
     background: var(--color-primary);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,0,2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0, 2);
 }
 
-.nav__container{
+.nav__container {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav button{
-    display: none;
-
+.nav__container a{
+    margin-left: -60px;
 }
 
-.nav__menu{
+nav button{
+    display: none;
+}
+
+.nav__menu {
     display: flex;
     align-items: center;
     gap: 4rem;
 }
 
-.nav__menu a{
+.nav__menu a {
     font-size: 0.9rem;
     transition: var(--transiition);
+    
 }
 
-.nav__menu a:hover{
+.nav__menu a:hover {
     color: var(--color-secondary);
 }
 
-.search{
+.search {
     box-sizing: border-box;
-    border: 1px solid #8F969C;
+    border: 1px solid #8f969c;
     border-radius: 30px;
     width: 200px;
     height: 30px;
-    
-
 }
 
 /* ========================FOOTER=============================*/
-.footer{
+.footer {
     background: var(--color-bg1);
     padding-top: 5rem;
     font-size: 0.9rem;
 }
 
-.footer_container{
+.footer_container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5rem;
-
 }
 
 .footer_container > div h4 {
     margin-bottom: 1.2rem;
-
 }
-.footer__1 p{
+.footer__1 p {
     margin: 0 0 2rem;
-
 }
 
-.footer ul li{
+.footer ul li {
     margin-bottom: 0.7rem;
 }
 
-footer ul li a:hover{
+footer ul li a:hover {
     text-decoration: underline;
 }
 
-.footer_socials{
+.footer_socials {
     display: flex;
     gap: 2rem;
     font-size: 1.2rem;
-    margin-top: 1rem
+    margin-top: 1rem;
 }
 
-.footer__copyright{
+.footer__copyright {
     text-align: center;
     margin-top: 4rem;
     padding: 1.2rem 0;
@@ -225,24 +225,24 @@ footer ul li a:hover{
 
 /* ========================MEDIA TABLET=============================*/
 @media (max-width: 1024px) {
-    .container{
+    .container {
         width: var(--container-width-md);
     }
-    
-    h1{
-        font-size: 2.2rem
+
+    h1 {
+        font-size: 2.2rem;
     }
-    h2{
-        font-size: 1.7rem
+    h2 {
+        font-size: 1.7rem;
     }
-    h3{
-        font-size: 1.4rem
+    h3 {
+        font-size: 1.4rem;
     }
-    h4{
-        font-size: 1.2rem
+    h4 {
+        font-size: 1.2rem;
     }
     /* ========================NAVBAR=============================*/
-    nav button{
+    nav button {
         display: inline-block;
         background: transparent;
         font-size: 1.8rem;
@@ -250,11 +250,11 @@ footer ul li a:hover{
         cursor: pointer;
     }
 
-    nav button#close-menu-btn{
+    nav button#close-menu-btn {
         display: none;
     }
 
-    .nav__menu{
+    .nav__menu {
         position: fixed;
         top: 5rem;
         right: 5%;
@@ -270,22 +270,21 @@ footer ul li a:hover{
         height: 5.8rem;
     }
 
-    .nav__menu li a{
+    .nav__menu li a {
         background: var(--color-primary);
-        box-shadow: -4rem 6rem rgba(0,0,0,0.1);
+        box-shadow: -4rem 6rem rgba(0, 0, 0, 0.1);
         width: 100%;
         height: 100%;
         display: grid;
         place-items: center;
     }
 
-    .nav__menu li a:hover{
+    .nav__menu li a:hover {
         background: var(--color-bg);
         color: var(--color-white);
-
     }
 
-    .nav__menu input{
+    .nav__menu input {
         box-sizing: border-box;
         position: absolute;
         width: 279px;
@@ -296,11 +295,10 @@ footer ul li a:hover{
         border: 1px solid #000000;
         border-radius: 30px;
     }
-
 }
 
 /* ========================NAVBAR=============================*/
-.tugas2modul4{
+.tugas2modul4 {
     padding: 6rem 0rem;
     margin-top: 2rem;
 }
@@ -319,36 +317,38 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
   
   /* link Sidebar */
   .sidebar a {
+    margin-top: 10px;
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     display: block;
     color: black;
     padding: 25px;
+    padding-left: 50px;
     text-decoration: none;
-  }
-  
-  /* link Active/current */
+}
 
-  .sidebar a:active {
+/* link Active/current */
+
+.sidebar a:active {
     background-color: var(--color-secondary);
     color: var(--color-white);
-  }
-  
-  /* Link pada mouse-over */
-  .sidebar a:hover {
+}
+
+/* Link pada mouse-over */
+.sidebar a:hover {
     background-color: var(--color-light);
     color: var(--color-secondary);
-  }
-  
-  /* Halaman konten. Nilai properti margin-left harus sesuai dengan nilai properti lebar sidebar */
-  div.content {
+}
+
+/* Halaman konten. Nilai properti margin-left harus sesuai dengan nilai properti lebar sidebar */
+div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
-  }
+}
 
-  .button {
+.button {
     color: var(--color-white);
     font-weight: 700;
     position: fixed;
@@ -356,8 +356,8 @@ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
     height: 35px;
     left: 50px;
     top: 650px;
-background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
-border-radius: 10px;
+    background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+    border-radius: 10px;    
   }
   
   /* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */
@@ -379,3 +379,25 @@ border-radius: 10px;
     }
   }
 
+/* Pada layar yang lebarnya kurang dari 700px, buat sidebar menjadi topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
+
+/* Pada layar yang berukuran kurang dari 400 piksel, tampilkan bar secara vertikal, bukan horizontal */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}

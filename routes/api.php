@@ -53,9 +53,10 @@ Route::prefix('stable')->group(function(){
         Route::get('/dashboard', function () {
             return view('dashboard');
         });
-        Route::get('/profile', function () {
-            return view('profile');
-        });
+        // Route::get('/profile', function () {
+        //     return view('profile');
+        // });
+        Route::get('me',[AuthController::class,'me'])->name('me');
         Route::get('/permohonan_surat', function () {
             return view('permohonan_surat');
         });
