@@ -24,8 +24,10 @@
             <label for="upload">Upload File</label>
             <input type="file" name="upload" id="upload" placeholder="Chosee File">
         </div>
-        <button class="button-custom">Submit</button>
-        <button class="button-custom">Cancel</button>
+        <div class="float-right">
+            <button class="button-custom">Submit</button>
+            <button class="button-custom">Cancel</button>
+        </div>
         
     </div>
 
