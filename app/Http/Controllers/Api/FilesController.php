@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Files;
 use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Validator;
 
 class FilesController extends Controller
 {
@@ -32,16 +33,25 @@ class FilesController extends Controller
     {
         if(JWTAuth::parseToken()->authenticate()->is_admin == 1){
             $validator = Validator::make($request->all(), [
-                'employee_id' => 'required|integer',
-                'url' => 'required|string|max:255',
                 'title' => 'required|string|max:255',
-                'status' => 'required|string|max:255',
+                'file.*' => 'required|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,7z',
             ]);
             if ($validator->fails()) {
                 return response()->json($validator->errors(), 400);
             }
-            $file = Files::create($request->all());
-            return response()->json($file, 201);
+
+            $upload = $request->file('file');
+            $filename = $upload->getClientOriginalName();
+            $destinationPath = 'files/';
+            $upload->move($destinationPath, $filename);
+
+            $file = DB::table('files')->insert([
+                'employee_id' => JWTAuth::parseToken()->authenticate()->id,
+                'url' => "/files/".$filename,
+                'title' => $request->title,
+            ]);
+            // return response()->json($file, 201);
+            return redirect('/permohonan_surat');
         }else{
             return response()->json(['error' => 'You are not authorized to perform this action'], 401);
         }
@@ -71,9 +81,9 @@ class FilesController extends Controller
     {
         if(JWTAuth::parseToken()->authenticate()->is_admin == 1){
             $validator = Validator::make($request->all(), [
-                'employee_id' => 'required|integer',
-                'url' => 'required|string|max:255',
-                'title' => 'required|string|max:255',
+                // 'employee_id' => 'required|integer',
+                // 'url' => 'required|string|max:255',
+                // 'title' => 'required|string|max:255',
                 'status' => 'required|string|max:255',
             ]);
             if ($validator->fails()) {
@@ -81,7 +91,8 @@ class FilesController extends Controller
             }
             $file = Files::findOrFail($id);
             $file->update($request->all());
-            return response()->json($file, 200);
+            // return response()->json($file, 200);
+            return redirect('/permohonan_surat');
         }else{
             return response()->json(['error' => 'You are not authorized to perform this action'], 401);
         }
@@ -98,7 +109,8 @@ class FilesController extends Controller
         if(JWTAuth::parseToken()->authenticate()->is_admin == 1){
             $file = Files::findOrFail($id);
             $file->delete();
-            return response()->json(['status' => 'success'], 200);
+            // return response()->json(['status' => 'success'], 200);
+            return redirect('/permohonan_surat');
         }else{
             return response()->json(['error' => 'You are not authorized to perform this action'], 401);
         }
