@@ -33,23 +33,32 @@
 
     <div class="box-daftar-surat">
         <h1>Daftar Surat</h1><hr style="width: 100%; height: 1.5px; background: var(--color-light); margin-top: 20px">
-        <div style="margin: 1rem">
-            @foreach ($suratfromauth as $s)
-                <h4> <a href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}">Title: {{str_replace('"', "", json_encode($s->title))}}</a></h4>
-                <h6>Status: {{json_encode($s->status)}}</h6>
-                {{ Form::open(['url' => '/api/stable/files/'.$s->id, 'method' => 'delete', 'class' => 'deleteForm', 'target'=>'dummyframe']) }}
+        @foreach ($suratfromauth as $s)
+        <div class="card-d-surat" style="margin: 1rem">
+            <div>
+                <img  href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}" src="{{asset('img/pdf.png')}}" alt="">
+            </div>
+            <div>
+                <h3> <a href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}">{{str_replace('"', "", json_encode($s->title))}}</a></h3>
+                <p>{{str_replace('"', "", json_encode($s->status))}} | {{str_replace('"', "", json_encode($s->created_at))}}</p>
+                <div class="inputan">
+                    {{ Form::open(['url' => '/api/stable/files/'.$s->id, 'method' => 'delete', 'class' => 'deleteForm', 'target'=>'dummyframe']) }}
                     <input type="submit" class="deleteBtn" value="Delete"/>
-                {{ Form::close() }}
-                {{ Form::open(['url' => '/api/stable/files/'.$s->id, 'method' => 'patch', 'class' => 'deleteForm', 'target'=>'dummyframe']) }}
-                    <input type="hidden" name="status" value="Approved">
-                    <input type="submit" class="deleteBtn" value="Approve"/>
-                {{ Form::close() }}
-                {{ Form::open(['url' => '/api/stable/files/'.$s->id, 'method' => 'patch', 'class' => 'deleteForm', 'target'=>'dummyframe']) }}
-                    <input type="hidden" name="status" value="Rejected">
-                    <input type="submit" class="deleteBtn" value="Reject"/>
-                {{ Form::close() }}
-            @endforeach
+                    {{ Form::close() }}
+                    {{ Form::open(['url' => '/api/stable/files/'.$s->id, 'method' => 'patch', 'class' => 'deleteForm', 'target'=>'dummyframe']) }}
+                        <input type="hidden" name="status" value="Approved">
+                        <input type="submit" class="deleteBtn" value="Approve"/>
+                    {{ Form::close() }}
+                    {{ Form::open(['url' => '/api/stable/files/'.$s->id, 'method' => 'patch', 'class' => 'deleteForm', 'target'=>'dummyframe']) }}
+                        <input type="hidden" name="status" value="Rejected">
+                        <input type="submit" class="deleteBtn" value="Reject"/>
+                    {{ Form::close() }}
+                </div>
+                
+            </div>
         </div>
+        @endforeach
+        
     </div>
     
 </header>
