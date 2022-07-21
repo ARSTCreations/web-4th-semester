@@ -114,8 +114,8 @@
             </div>
             <div class="title">
                 <h1>Log in Pegawai <img src="img/waving-hand-2.png" width="30px"></h1>
-                <p>Selamat datang di aplikasi kepegawaian CV. Creative Design<br>Indonesia. Pegawai?
-                    <a href="#login-pegawai" class="signupBtn">Klik Disini</a></p>
+                <p>Selamat datang di aplikasi kepegawaian CV. Creative Design<br>Indonesia. Admin?
+                    <a href="/admin" class="signupBtn">Klik Disini</a></p>
             </div>
 
             <form name="submitbtn" id="login" action="/api/stable/auth/login" method="post">
