@@ -63,8 +63,19 @@
     <div class="box-agenda">
         <h1>Agenda</h1>
      </div>
-    <div class="box-p-surat">
+     <div class="box-p-surat" style="overflow-y: scroll">
         <h1>Permohonan Surat</h1>
+        @foreach ($profilefromauth as $s)
+        <div class="card-d-surat" style="margin: 1rem;">
+            <div>
+                <img  href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}" src="{{asset('img/pdf.png')}}" alt="">
+            </div>
+            <div>
+                <h3> <a href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}">{{str_replace('"', "", json_encode($s->title))}}</a></h3>
+                <p>{{str_replace('"', "", json_encode($s->status))}} | {{str_replace('"', "", json_encode($s->created_at))}}</p>
+            </div>
+        </div>
+        @endforeach
     </div>
     <div class="box-presensi">
         <h1>Presensi</h1>

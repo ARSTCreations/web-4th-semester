@@ -88,3 +88,44 @@ box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 border-radius: 15px;
 }
 
+.card-d-surat{
+    display: grid;
+    grid-template-columns: 5% 95%;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 290px;
+    height: 60px;
+    background: rgba(0, 80, 200, 0.05);
+    border-radius: 5px;
+    color: var(--color-black);
+}
+
+.card-d-surat img{
+    margin-top: 3px;
+    width: 25px;
+    height: 25px;
+}
+
+.card-d-surat h3{
+    margin-left: 20px;
+    font-size: 15px;
+}
+.card-d-surat p{
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.card-d-surat input{
+    color: var(--color-white);
+    font-weight: 500;
+    font-size: 10px;
+    width: 50px;
+    height: 20px;
+    left: 50px;
+    top: 650px;
+    background: linear-gradient(264.25deg, #0050C8 51.8%, #1E78FF 115.07%);
+    border-radius: 5px;   
+}
+
