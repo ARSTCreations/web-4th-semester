@@ -5,22 +5,51 @@
 @stop
 @section('content')
 <header>
-    <h1>Presensi</h1>
     <div class="box-presensi">
         <table id="product" class="display form-table" style="width:100%">
             <thead>
               <tr>
                 <th>
-                    <a href="#" class="left"> <</a>
-                    <a href="#" class="month"> Juli 2022 </a>
-                    <a href="#" class="right"> > </a>
+                    <h1>Presensi</h1>
+                    <div class="prev-next">
+                        <a href="#" class="left"> <</a>
+                        <a href="#" class="month"> Juli 2022 </a>
+                        <a href="#" class="right"> > </a>
+                    </div>
                 </th>
-                
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td>
+                    <div class="tanggal-waktu">
+                        <label for="tanggal">Tanggal</label>
+                        <input style="margin-left: 60px;font-family:'Montserrat" type="date" name="tanggal" id="tanggal">
+                        <label for="waktu">Waktu</label>
+                        <input style="margin-left: 30px;font-family:'Montserrat" type="text" name="waktu" id="waktu" placeholder="08.00-17.00">
+                    </div>
+                    <div class="status">
+                        <label for="ket-hadir">Keterangan</label>
+                        <label>
+                            <input type="radio" style="margin-left: -11px; font-weight: 100" name="contact_email" value="email"> Hadir
+                            <input type="radio" style="margin-left: 50px; font-weight: 100" name="ket" value="absen"> Tidak Hadir 
+                            <input type="radio" style="margin-left: 50px; font-weight: 100" name="ket" value="izin"> Izin
+                        </label>  
+                    </div>
+                    <div class="deskripsi">
+                        <label for="desc">Deskripsi</label>
+                        <input type="text" style="margin-left: 50px;font-family:'Montserrat" name="desc" id="desc" placeholder="Lorem ipsum dolor sit amet">
+                    </div> <br>
+                </td>
                 
+              </tr>
+              <tr>
+                <td>
+                    <div class="submit">
+                        <button> Submit</button>
+                        <button> Cancel</button>
+                    </div>
+                </td>
               </tr>
             </tbody>
         </table>
