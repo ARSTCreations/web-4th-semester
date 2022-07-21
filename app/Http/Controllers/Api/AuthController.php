@@ -112,7 +112,7 @@ class AuthController extends Controller
 
     public function getProfileDash(){
         $authid = auth()->user()->id;
-        $profilefromauth = DB::select("SELECT * FROM employees e INNER JOIN users u on (e.id = u.employee_id) INNER JOIN jobs j on (e.job_id = j.id) INNER JOIN departments d on (j.id = d.id) WHERE e.id = ?", [$authid]);
+        $profilefromauth = DB::select("SELECT * FROM employees e INNER JOIN users u on (e.id = u.employee_id) INNER JOIN jobs j on (e.job_id = j.id) INNER JOIN departments d on (j.id = d.id) INNER JOIN files f on (e.id = f.employee_id) WHERE e.id = ?", [$authid]);
         return view('dashboard', compact('profilefromauth'));
     }
 
