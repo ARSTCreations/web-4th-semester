@@ -12,7 +12,7 @@
         </div>
         <div class="content-grid">
             <div class="grid-kiri">
-                <img src="../img/profil.png" alt="">
+                <img src="{{asset('img/profil.png')}}" alt="">
                 <h3 style="margin-top: 30px;">{{str_replace('"', "", json_encode($profilefromauth[0]->full_name))}}</h3>
                 <p style="margin-bottom: 50px;">{{str_replace('"', "", json_encode($profilefromauth[0]->job_title))}}</p>
                 <li class="social-media">
