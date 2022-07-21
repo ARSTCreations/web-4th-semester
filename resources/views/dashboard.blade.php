@@ -60,10 +60,30 @@
             </div>
         </div>
     </div>
-    <div class="box-agenda">
+
+    <div class="box-agenda" style="overflow-y: scroll">
         <h1>Agenda</h1>
-     </div>
-     <div class="box-p-surat" style="overflow-y: scroll">
+        @foreach($profilefromauth as $s)
+        <div class="card-agenda">
+            <div>
+                <label style="font-size: 15px; for="#agenda">Nama Agenda</label>
+                <h2 style="font-size: 20px;">{{str_replace('"', "", stripslashes(json_encode($s->title)))}}</h2>
+            </div>
+            <div>
+                <label style="font-size: 15px; for="#location">Lokasi</label>
+                <p>{{str_replace('"', "", stripslashes(json_encode($s->location)))}}</p>
+            </div>
+            <div>
+                <label style="font-size: 15px; for="#date">Waktu</label>
+                <p style="font-size: 13px;">start date: {{str_replace('"', "", stripslashes(json_encode($s->start_date)))}}</p>
+                <p style="font-size: 13px;">end date: {{str_replace('"', "", stripslashes(json_encode($s->start_date)))}}</p>
+            </div>
+            
+        </div>
+        @endforeach
+    </div>
+
+    <div class="box-p-surat" style="overflow-y: scroll">
         <h1>Permohonan Surat</h1>
         @foreach ($profilefromauth as $s)
         <div class="card-d-surat" style="margin: 1rem;">
@@ -72,14 +92,29 @@
             </div>
             <div>
                 <h3> <a href="{{str_replace('"', "", stripslashes(json_encode($s->url)))}}">{{str_replace('"', "", json_encode($s->title))}}</a></h3>
-                <p>{{str_replace('"', "", json_encode($s->status))}} | {{str_replace('"', "", json_encode($s->created_at))}}</p>
+                <p>{{str_replace('"', "", json_encode($s->file_status))}} | {{str_replace('"', "", json_encode($s->created_at))}}</p>
             </div>
         </div>
         @endforeach
     </div>
-    <div class="box-presensi">
+
+    <div class="box-presensi" style="overflow-y: scroll">
         <h1>Presensi</h1>
+        @foreach ($profilefromauth as $s)
+        <div class="card-presensi" style="margin: 1rem;">
+            <div>
+                <a class="{{str_replace('"', "", json_encode($s->presence_status))}}">{{str_replace('"', "", json_encode($s->status))}}</a>
+            </div>
+            <div>
+                <p>{{str_replace('"', "", json_encode($s->full_name))}}</p>
+            </div>
+            <div>
+                <p>{{str_replace('"', "", json_encode($s->date))}}</p>
+            </div>
+        </div>
+        <hr style="width: 100%; height: 1.5px; background: var(--color-light); margin-top: 5px">
+        @endforeach
     </div>
 </header>
 
-@endsection
+@ends
