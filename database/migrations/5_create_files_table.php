@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('employee_id')->references('id')->on('employees');
             $table->string('url');
             $table->string('title');
-            $table->string('status');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

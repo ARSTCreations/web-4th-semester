@@ -13,8 +13,8 @@
         <div class="content-grid">
             <div class="grid-kiri">
                 <img src="../img/profil.png" alt="">
-                <h3 style="margin-top: 30px;">Nama Saya</h3>
-                <p style="margin-bottom: 50px;">Title Saya</p>
+                <h3 style="margin-top: 30px;">{{str_replace('"', "", json_encode($profilefromauth[0]->full_name))}}</h3>
+                <p style="margin-bottom: 50px;">{{str_replace('"', "", json_encode($profilefromauth[0]->job_title))}}</p>
                 <li class="social-media">
                     <a href="#linkedin"><i class="uil uil-linkedin"></i></a>
                     <a href="#facebook"><i class="uil uil-facebook"></i></a>
@@ -25,35 +25,35 @@
             <div class="grid-kanan">
                 <div class="grid-kiri-kiri">
                     <ul>
-                        <li class="desc-li">Divisi</li>
-                        <li>Produksi</li>
+                        <li class="desc-li">Department</li>
+                        <li>{{str_replace('"', "", json_encode($profilefromauth[0]->department_name))}}</li>
                         <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
                     </ul>
                     <ul>
                         <li class="desc-li">Posisi</li>
-                        <li>IT Support</li>
+                        <li>{{str_replace('"', "", json_encode($profilefromauth[0]->job_title))}}</li>
                         <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
                     </ul>
                     <ul>
                         <li class="desc-li">Salary</li>
-                        <li>15000</li>
+                        <li>{{str_replace('"', "", json_encode($profilefromauth[0]->salary))}}</li>
                         <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
                     </ul>
                 </div>
                 <div class="grid-kiri-kanan">
                     <ul>
-                        <li class="desc-li">Divisi</li>
-                        <li>Produksi</li>
+                        <li class="desc-li">Phone</li>
+                        <li>{{str_replace('"', "", json_encode($profilefromauth[0]->phone))}}</li>
                         <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
                     </ul>
                     <ul>
-                        <li class="desc-li">Posisi</li>
-                        <li>IT Support</li>
+                        <li class="desc-li">Alamat</li>
+                        <li>{{str_replace('"', "", json_encode($profilefromauth[0]->address))}}</li>
                         <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
                     </ul>
                     <ul>
-                        <li class="desc-li">Salary</li>
-                        <li>15000</li>
+                        <li class="desc-li">Tanggal Lahir</li>
+                        <li>{{str_replace('"', "", json_encode($profilefromauth[0]->birth_place))}}, {{str_replace('"', "", json_encode($profilefromauth[0]->birth_date))}}</li>
                         <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
                     </ul>
                 </div>

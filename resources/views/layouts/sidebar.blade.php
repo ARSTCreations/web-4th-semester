@@ -4,5 +4,7 @@
   <a  href="/api/stable/permohonan_surat"><i class="uil uil-envelope"></i>  Permohonan Surat</a>
   <a  href="/api/stable/presensi"><i class="uil uil-check-square"></i>  Presensi</a>
   <a  href="/api/stable/agenda"><i class="uil uil-calender"></i>    Agenda Kantor</a>
-  <button class="button" href="#logout">Logout</button>
+  <form action="/api/stable/auth/logout" method="post">
+    <input type="submit" class="button" value="Logout">
+  </form>
 </div>

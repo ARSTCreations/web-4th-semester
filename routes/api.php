@@ -50,16 +50,9 @@ Route::prefix('stable')->group(function(){
             'as'=>'api'
         ]);
 
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        });
-        // Route::get('/profile', function () {
-        //     return view('profile');
-        // });
-        Route::get('me',[AuthController::class,'me'])->name('me');
-        Route::get('/permohonan_surat', function () {
-            return view('permohonan_surat');
-        });
+        Route::get('/dashboard', [AuthController::class, 'getProfileDash'])->name('getProfileDash');
+        Route::get('/profile', [AuthController::class, 'getProfile'])->name('getProfile');
+        Route::get('/permohonan_surat', [AuthController::class, 'getSurat'])->name('getSurat');
         Route::get('/presensi', function () {
             return view('presensi');
         });

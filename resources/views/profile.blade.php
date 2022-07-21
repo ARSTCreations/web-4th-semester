@@ -13,9 +13,9 @@
     <div class="grid-bawah">
         <div class="grid-bawah-kiri">
             <img src="{{asset('img/profil.png')}}" alt="">
-            <h3 style="margin-top: 30px;">Nama Saya</h3>
-            <p>Title Saya</p>
-            <p >Kontak :</p>
+            <h3 style="margin-top: 30px;">{{str_replace('"', "", json_encode($profilefromauth[0]->full_name))}}</h3>
+            <p>{{str_replace('"', "", json_encode($profilefromauth[0]->job_title))}}</p>
+            <p style="margin-top: 270px;">Kontak :</p>
             <li class="social-media">
                 <a href="#linkedin"><i class="uil uil-linkedin"></i></a>
                 <a href="#facebook"><i class="uil uil-facebook"></i></a>
@@ -26,28 +26,28 @@
         <div class="grid-bawah-tengah">
             <h2>Detail Pekerjaan</h2>
             <ul>
-                <li class="desc-li">Divisi</li>
-                <li>Produksi</li>
+                <li class="desc-li">Department</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->department_name))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>
                 <li class="desc-li">Posisi</li>
-                <li>IT Support</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->job_title))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>
                 <li class="desc-li">Salary</li>
-                <li>15000</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->salary))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>
                 <li class="desc-li">Mulai Bekerja</li>
-                <li>DD/MM/YYYY</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->start_date))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>
                 <li class="desc-li">Status</li>
-                <li>Aktif Bekerja</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->working_status))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
         </div>
@@ -55,12 +55,12 @@
             <h2>Biodata</h2>
             <ul>
                 <li class="desc-li">Email</li>
-                <li>email@email.com</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->email))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>
                 <li class="desc-li">Tanggal Lahir</li>
-                <li>DD/MM/YYYY</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->birth_place))}}, {{str_replace('"', "", json_encode($profilefromauth[0]->birth_date))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>
@@ -70,7 +70,7 @@
             </ul>
             <ul>
                 <li class="desc-li">Alamat</li>
-                <li>Jl. Kasih Sayang</li>
+                <li>{{str_replace('"', "", json_encode($profilefromauth[0]->address))}}</li>
                 <hr style="width: 70%; height: 1.5px; background: var(--color-light); margin-top: 15px">
             </ul>
             <ul>

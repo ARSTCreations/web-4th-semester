@@ -30,8 +30,8 @@ class EmployeesSeeder extends Seeder
             'end_date' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
         DB::table('employees')->insert([
-            'job_id' => 1,
-            'full_name' => 'Manager Kim',
+            'job_id' => 2,
+            'full_name' => 'Mbak Minji',
             'working_status' => 'Active',
             'salary' => 100000,
             'phone' => '081234567890',
