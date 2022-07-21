@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use App\Models\Employees;
 
 
 class AuthController extends Controller
@@ -100,4 +102,23 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
+
+    public function getProfile(){
+        $authid = auth()->user()->id;
+        $profilefromauth = DB::select("SELECT * FROM employees e INNER JOIN users u on (e.id = u.employee_id) INNER JOIN jobs j on (e.job_id = j.id) INNER JOIN departments d on (j.id = d.id) WHERE e.id = ?", [$authid]);
+        return view('profile', compact('profilefromauth'));
+    }
+
+    public function getProfileDash(){
+        $authid = auth()->user()->id;
+        $profilefromauth = DB::select("SELECT * FROM employees e INNER JOIN users u on (e.id = u.employee_id) INNER JOIN jobs j on (e.job_id = j.id) INNER JOIN departments d on (j.id = d.id) WHERE e.id = ?", [$authid]);
+        return view('dashboard', compact('profilefromauth'));
+    }
+
+    public function getSurat(){
+        $authid = auth()->user()->id;
+        $suratfromauth = DB::select("SELECT * FROM files");
+        return view('permohonan_surat', compact('suratfromauth'));
+    }
+
 }
