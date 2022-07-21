@@ -4,7 +4,7 @@
     height: auto;
     left: 332px;
     top: 100px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     padding-bottom: 30px;
@@ -15,27 +15,27 @@
     height: auto;
     left: 332px;
     top: 535px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     padding-bottom: 30px;
 }
 
 /*----------------------FORM PRESENSI--------------------*/
-.form-table label{
+.form-table label {
     color: black;
     font-size: 13px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
     margin-left: 50px;
 }
 
-.tanggal-waktu{
+.tanggal-waktu {
     margin-bottom: 25px;
 }
 
-.tanggal-waktu input{
+.tanggal-waktu input {
     padding: 10px 40px;
     padding-left: 10px;
     height: 42px;
@@ -50,14 +50,14 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.status label input{
+.status label input {
     font-size: 12px;
     font-weight: normal;
     color: black;
     text-align: left;
     padding-left: 30px;
 }
-.deskripsi input{
+.deskripsi input {
     padding-left: 10px;
     width: 860px;
     height: 42px;
@@ -81,25 +81,26 @@
     text-align: left;
     border-bottom: 0.5px solid black;
 }
-.form-table h1{
+.form-table h1 {
     position: absolute;
     margin-left: -18px;
     margin-top: 11px;
 }
-.form-table .prev-next{
+.form-table .prev-next {
     margin-left: 780px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
-.form-table .left, .right{
+.form-table .left,
+.right {
     font-size: 13px;
-    background-color: #0050C8;
+    background-color: #0050c8;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     margin-right: 5px;
 }
-.form-table .month{
+.form-table .month {
     font-size: 13px;
     font-weight: normal;
     background-color: #0050c8;
@@ -109,10 +110,10 @@
     margin-right: 7px;
 }
 
-.submit{
+.submit {
     margin-left: 730px;
 }
-.submit button {
+.submit input {
     width: 140px;
     height: 47px;
     font-weight: 700;
@@ -123,7 +124,7 @@
     margin-right: 15px;
     outline: none;
     font-weight: bold;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
 }
 
 /*----------------------TABEL DATA PRESENSI--------------------*/
@@ -139,7 +140,7 @@
     border-bottom: 0.5px solid black;
 }
 
-.expandable-table tr td p{
+.expandable-table tr td p {
     padding: 14px;
     padding-left: 50px;
     padding-bottom: 5px;

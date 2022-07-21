@@ -23,7 +23,7 @@ class PresencesSeeder extends Seeder
         ]);
         DB::table('presences')->insert([
             'employee_id' => 2,
-            'date' => '2020-01-01 07:15:00',
+            'date' => '2020-01-01 08:15:00',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\JobsController;
 use App\Http\Controllers\Api\EmployeesController;
 use App\Http\Controllers\Api\FilesController;
 use App\Http\Controllers\Api\AgendasController;
+use App\Http\Controllers\Api\PresencesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,9 @@ Route::prefix('stable')->group(function(){
             'as'=>'api'
         ]);
         Route::apiResource('agendas',AgendasController::class,[
+            'as'=>'api'
+        ]);
+        Route::apiResource('presences',PresencesController::class,[
             'as'=>'api'
         ]);
 
