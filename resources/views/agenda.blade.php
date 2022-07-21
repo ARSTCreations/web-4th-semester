@@ -11,13 +11,14 @@
 <header>
 <div class="box-daftar-agenda">
         <h1>Daftar Agenda</h1>
+        @foreach($agendafromauth as $s)
         <div class="card-agenda">
-            <p>Selasa, 19 Juli 2022</p>
-            <h2>Demo Proyek Pemaaran</h2>
-            <p>08.00 - 09.00</p>
-            <p>Gedung AB</p>
-            </div>
+            <p>start date: {{str_replace('"', "", stripslashes(json_encode($s->start_date)))}}</p>
+            <p>end date: {{str_replace('"', "", stripslashes(json_encode($s->start_date)))}}</p>
+            <h2>{{str_replace('"', "", stripslashes(json_encode($s->title)))}}</h2>
+            <p>{{str_replace('"', "", stripslashes(json_encode($s->location)))}}</p>
         </div>
+        @endforeach
     </div>
     <div class="box-kalender-agenda">
         <h1>Kalender Agenda</h1>

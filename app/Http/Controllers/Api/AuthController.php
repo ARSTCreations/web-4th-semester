@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Employees;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 
 class AuthController extends Controller
@@ -116,14 +117,21 @@ class AuthController extends Controller
     }
 
     public function getSurat(){
-        $authid = auth()->user()->id;
         $suratfromauth = DB::select("SELECT * FROM files");
         return view('permohonan_surat', compact('suratfromauth'));
     }
 
     public function getPresensi(){
-        $authid = auth()->user()->id;
         $presensifromauth = DB::select("SELECT * FROM presences p INNER JOIN employees e ON (p.employee_id = e.id)");
         return view('presensi', compact('presensifromauth'));
+    }
+    
+    public function getAgenda(){
+        if(JWTAuth::parseToken()->authenticate()->is_admin == 1){
+            $agendafromauth = DB::select("SELECT * FROM agendas");
+            return view('agenda', compact('agendafromauth'));
+        }else{
+            return redirect('/dashboard');
+        }
     }
 }
