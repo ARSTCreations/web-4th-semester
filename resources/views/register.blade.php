@@ -14,7 +14,6 @@
     <div class="row">
         <div class="kiri">
             <img src="img/rectangle.png" style="height:100%; width:35vw">
-
             <!-------offer----->
             <div class="offer">
                 <div class="slideshow-container">
@@ -73,7 +72,7 @@
                 </div>
                 <br>
         
-                <div style="text-align:center">
+                <div style="text-align:center; margin-top:-27rem; margin-left:-12rem">
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -107,33 +106,40 @@
             </div>
         </div>
 
-        <div class="kanan">
+        <div class="kanan" style="margin-top: 7rem">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
-            <form action="#register" method="POST">
+            <form action="/api/stable/auth/register" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="">Full Name</label>
-            <input type="text" name="full_name" placeholder="Full Name" required>
+                    <input type="text" name="name" placeholder="Full Name" required>
                 </div>
+
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
                     @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
                     <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required autocomplete="new-password">
                     @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <label for="">Job ID</label>
+                    <input type="text" name="job_id" placeholder="Job ID" required>
+                </div>
+
                 <div class="form-group">
                     <label for="">Working Status</label>
                     <select name="working_status">
@@ -141,38 +147,52 @@
                         <option value="Inactive">Inactive</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="">Salary</label>
-            <input type="number" name="salary" required>
+                <input type="number" name="salary" required>
                 </div>
+
                 <div class="form-group">
                     <label for="">Phone Number</label>
-            <input type="number" name="phone" required>
+                <input type="number" name="phone" required>
                 </div>
+
                 <div class="form-group">
                     <label for="">Address</label>
-            <input type="text" name="address" required>
+                    <input type="text" name="address" required>
                 </div>
+
                 <div class="form-group">
                     <label for="">Birth Place</label>
                     <input type="text" name="birth_place" required>
                 </div>
+
                 <div class="form-group">
                     <label for="">Birth Date</label>
                     <input type="date" name="birth_date" required>
                 </div>
+
                 <div class="form-group">
                     <label for="">Gender</label>
-            <select name="gender" id="" required>
-                <option value="0">Female</option>
-                <option value="1">Male</option>
-            </select>
+                    <select name="gender" id="" required>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
                 </div>
+                
                 <div class="form-group">
                     <label for="">Start Date</label>
-            <input type="datetime" name="start_date" required>
+                    <input type="datetime-local" name="start_date" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="">Start Date</label>
+                    <input type="datetime-local" name="end_date" required>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Register</button>
+            </form>
         </div>
     </div>
 </body>

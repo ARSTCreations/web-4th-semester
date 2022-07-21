@@ -17,8 +17,8 @@ class AuthController extends Controller
 {
     public function __construct ()
     {
-        //$this->middleware('jwt.verify', ['except' => ['login', 'register']]);
-        $this->middleware('jwt.verify', ['except' => ['login']]);
+        $this->middleware('jwt.verify', ['except' => ['login', 'register']]);
+        //$this->middleware('jwt.verify', ['except' => ['login']]);
     }
 
     public function register(){
@@ -40,11 +40,12 @@ class AuthController extends Controller
             'end_date' => 'required|date|after:start_date',
         ]);
         if ($validator->fails()) {
-            // return response()->json($validator->errors(), 400);
-            return redirect('/register')
-                ->withErrors($validator->errors(), 400);
+            return response()->json($validator->errors(), 400);
+            //return redirect('/register')
+            //    ->withErrors($validator->errors(), 400);
         }
-        Employee::create([
+        $created = Employees::create([
+            'job_id' => request('job_id'),
             'full_name' => request('name'),
             'working_status' => request('working_status'),
             'salary' => request('salary'),
@@ -61,11 +62,11 @@ class AuthController extends Controller
             'email' => request('email'),
             'password' => Hash::make(request('password')),
         ]);
-        // $token = auth()->login($user);
-        // setcookie('token', $token, time() + (86400 * 30), "/");
-        // return $this->respondWithToken($token);
-        return redirect('/login')
-            ->with('success', 'You have successfully registered! Please Login',);
+        $token = auth()->login($user);
+        setcookie('token', $token, time() + (86400 * 30), "/");
+        //return $user;
+        return redirect('/profile')
+            ->with('success', 'You have successfully registered!',);
     }
 
     public function login(){
@@ -82,7 +83,7 @@ class AuthController extends Controller
         }
         \setcookie('token', $token, time() + (86400 * 30), "/");
         //return $this->respondWithToken($token);
-        return redirect('/dashboard?login=true');
+        return redirect('/profile?login=true');
     }
 
     public function logout(){
