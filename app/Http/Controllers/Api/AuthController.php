@@ -121,4 +121,9 @@ class AuthController extends Controller
         return view('permohonan_surat', compact('suratfromauth'));
     }
 
+    public function getPresensi(){
+        $authid = auth()->user()->id;
+        $presensifromauth = DB::select("SELECT * FROM presences p INNER JOIN employees e ON (p.employee_id = e.id)");
+        return view('presensi', compact('presensifromauth'));
+    }
 }

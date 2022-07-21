@@ -22,4 +22,7 @@ class Employees extends Model
     public function users(){
         return $this->hasOne('User::class');
     }
+    public function presences(){
+        return $this->hasMany('Presences::class');
+    }
 }

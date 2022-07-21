@@ -36,83 +36,25 @@
                         <table id="product" class="display expandable-table" style="width:100%">
                           <thead>
                             <tr>
-                              <th>Tanggal</th>
-                              <th>Waktu</th>
-                              <th>Deskripsi</th>
-                              <th>Status</th>
+                              <th>Tanggal dan Waktu</th>
+                              <th>Nama Pegawai</th>
+                              <th>Presensi</th>
                             </tr>
                           </thead>
                           <tbody>
+                          @foreach ($presensifromauth as $s)
                             <tr class="data-presensi">
                               <td>
-                                <p>12/07/2022</p>
+                                <p>{{str_replace('"', "", json_encode($s->date))}}</p>
                               </td>
                               <td>
-                                <p>08.00-17.00</p>
+                                <p>{{str_replace('"', "", json_encode($s->full_name))}}</p>
                               </td>
                               <td>
-                                <p>Lorem Ipsum Dolor Sit Amet</p>
-                              </td>
-                              <td>
-                                <a class="presence">Presence</a>
+                                <a class="{{str_replace('"', "", json_encode($s->status))}}">{{str_replace('"', "", json_encode($s->status))}}</a>
                               </td>
                             </tr>
-                            <tr class="data-presensi">
-                                <td>
-                                  <p>12/07/2022</p>
-                                </td>
-                                <td>
-                                  <p>08.00-17.00</p>
-                                </td>
-                                <td>
-                                  <p>Lorem Ipsum Dolor Sit Amet</p>
-                                </td>
-                                <td>
-                                  <a class="absent">Absent</a>
-                                </td>
-                              </tr>
-                              <tr class="data-presensi">
-                                <td>
-                                  <p>12/07/2022</p>
-                                </td>
-                                <td>
-                                  <p>---</p>
-                                </td>
-                                <td>
-                                  <p>Lorem Ipsum Dolor Sit Amet</p>
-                                </td>
-                                <td>
-                                  <a class="presence">Presence</a>
-                                </td>
-                              </tr>
-                              <tr class="data-presensi">
-                                <td>
-                                  <p>12/07/2022</p>
-                                </td>
-                                <td>
-                                  <p>08.00-17.00</p>
-                                </td>
-                                <td>
-                                  <p>Lorem Ipsum Dolor Sit Amet</p>
-                                </td>
-                                <td>
-                                  <a class="presence">Presence</a>
-                                </td>
-                              </tr>
-                              <tr class="data-presensi">
-                                <td>
-                                  <p>12/07/2022</p>
-                                </td>
-                                <td>
-                                  <p>---</p>
-                                </td>
-                                <td>
-                                  <p>Lorem Ipsum Dolor Sit Amet</p>
-                                </td>
-                                <td>
-                                  <a class="permit">Permit</a>
-                                </td>
-                              </tr>
+                          @endforeach
                           </tbody>
                       </table>
                       </div>

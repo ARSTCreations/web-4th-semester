@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agendas extends Model
+class Presences extends Model
 {
     use HasFactory;
-    protected $table = 'agendas';
+    protected $table = 'presences';
     protected $guarded = [];
     public function employees(){
         return $this->belongsTo('Employees::class');

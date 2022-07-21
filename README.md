@@ -46,6 +46,7 @@ php artisan db:seed --class=EmployeesSeeder
 php artisan db:seed --class=UserSeeder
 php artisan db:seed --class=AgendasSeeder
 php artisan db:seed --class=FilesSeeder
+php artisan db:seed --class=PresencesSeeder
 ```
 
 -   Generate JWT and Laravel Secret Key
